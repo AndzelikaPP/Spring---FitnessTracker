@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "94c25d22-5e93-4973-b6f8-d86ec168ab22",
+		"name": "LAB3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42954334"
+	},
+	"item": [
+		{
+			"name": "getAllTrainings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/v1/trainings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"v1",
+						"trainings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTrainingsFinishedAfterTime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/v1/trainings/finished/2024-01-16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"v1",
+						"trainings",
+						"finished",
+						"2024-01-16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTrainingsByActivityType",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/v1/trainings/activityType?activityType=RUNNING",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"v1",
+						"trainings",
+						"activityType"
+					],
+					"query": [
+						{
+							"key": "activityType",
+							"value": "RUNNING"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTrainingsByUserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/v1/trainings/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"v1",
+						"trainings",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addTraining",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startTime\": \"2024-01-10T13:00:00\",\r\n  \"endTime\": \"2024-01-10T14:15:00\",\r\n  \"activityType\": \"CYCLING\",\r\n  \"userId\": 10,\r\n  \"distance\": 11.8,\r\n  \"averageSpeed\": 8.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/v1/trainings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"v1",
+						"trainings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTraining",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startTime\": \"2024-01-10T13:00:00\",\r\n  \"endTime\": \"2024-01-10T14:30:00\",\r\n  \"activityType\": \"CYCLING\",\r\n  \"userId\": 10,\r\n  \"distance\": 30,\r\n  \"averageSpeed\": 9.1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/v1/trainings/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"v1",
+						"trainings",
+						"10"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
